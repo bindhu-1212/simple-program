@@ -1,0 +1,52 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Distance
+{
+private:
+    int feet;
+    int inches;
+
+public:
+    void getinput()
+    {   
+        cout << " Enter feet : ";
+        cin >> feet;
+        cout << " Enter inches : ";
+        cin >> inches;
+    }
+
+    static Distance add(const Distance& d1, const Distance& d2)
+    {
+        Distance cal;
+        cal.feet = d1.feet + d2.feet;
+        cal.inches = d1.inches + d2.inches;
+
+        if (cal.inches >= 12)
+        {
+            cal.feet += cal.inches / 12;
+            cal.inches = cal.inches % 12;
+        }
+
+        return cal;
+    }
+
+    void show() const
+    {
+        cout << "Feet: " << feet << endl;
+        cout << "Inches: " << inches << endl;
+    }
+};
+
+int main()
+{
+    Distance d1, d2, cal;
+
+    d1.getinput();
+    d2.getinput();
+
+    cal = Distance::add(d1, d2);
+    cal.show();
+
+    return 0;
+}
