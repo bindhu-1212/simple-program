@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class Line
+{
+    public:
+    double length;
+  double getline();
+    void setline(double);
+};
+void Line::setline(double a)
+{
+    length=a;
+}
+double Line::getline()
+{
+    return length;
+}
+int main()
+{
+    Line l;
+      l.setline(7.453);// access with member function.
+    cout<<" The value is "<<l.getline();
+    // access without member function
+    l.length=79.9999;
+    cout<<" The new value is "<< l.length;
+    
+}
