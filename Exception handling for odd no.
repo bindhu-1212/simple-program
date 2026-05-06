@@ -1,0 +1,27 @@
+include<iostream>
+using namespace std;
+class Odd
+{
+    public:
+    const char*show()
+    {
+       return "Cannot handle odd number";
+    }
+};
+int main()
+{
+    cout<<" enter";
+    int n;
+    cin>>n;
+    try
+    {
+        if(n>0)
+        {
+            throw Odd();
+        }
+        cout<<"Even ";
+}
+catch(Odd &o)
+{
+    cout<<o.show();
+}}
