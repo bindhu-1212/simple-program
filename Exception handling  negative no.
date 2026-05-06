@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cmath>
+using namespace std;
+class Square 
+{
+    public:
+    const char*show()
+    {
+       return "Cannot handle negative number";
+    }
+};
+int main()
+{
+    cout<<" enter";
+    int n;
+    cin>>n;
+    try
+    {
+        if(n<0)
+        {
+            throw Square();
+        }
+        cout<<sqrt(n);
+}
+catch(Square &s)
+{
+    cout<<s.show();
+}}
